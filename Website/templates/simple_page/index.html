@@ -1,0 +1,64 @@
+{% extends 'simple_page/base.html' %}
+
+{% block body_block %}
+
+{% if user.is_authenticated %}
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">WELCOME USER!!! YOU ARE LOGIN NOW!!</h1>
+  </div>
+</div>
+{% else %}
+
+<div class="container pt-4 py-5 my-auto">
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="card bg-secondary text-light">
+        <div class="cards-body text-center my-auto">
+          <div class="h3 p-3">
+            <i class="bi bi-1-square"></i>
+          </div>
+          <h5 class="card-title lead">Rejestracja</h5>
+          <p class="card-text small p-3">
+            Aby zacząć korzystać z serwisu, musisz się wcześniej zalogować.
+            Jeżeli nie masz konta. Zarejestruj się!
+          </p>
+          <a href="{% url 'simple_page:register' %}" class="btn btn-sm btn-danger">Zarejestruj się</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="card bg-dark text-light">
+        <div class="cards-body text-center my-auto">
+          <div class="h3 p-3">
+            <i class="bi bi-2-square"></i>
+          </div>
+          <h5 class="card-title lead">Logowanie</h5>
+          <p class="card-text small p-3">
+            Aby zacząć korzystać z serwisu, musisz się wcześniej zalogować.
+            Jeżeli nie masz konta. Zarejestruj się!
+          </p>
+          <a href="{% url 'simple_page:user_login' %}" class="btn btn-sm btn-danger">Zaloguj się</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="card bg-secondary text-light">
+        <div class="cards-body text-center my-auto">
+          <div class="h3 p-3">
+            <i class="bi bi-3-square bg-"></i>
+          </div>
+          <h5 class="card-title lead">O Nas!</h5>
+          <p class="card-text small p-3">
+            Aby zacząć korzystać z serwisu, musisz się wcześniej zalogować.
+            Jeżeli nie masz konta. Zarejestruj się!
+          </p>
+          <a href="{% url 'simple_page:about_us' %}" class="btn btn-sm btn-danger">Poznaj nas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endif %} {% endblock body_block %}
